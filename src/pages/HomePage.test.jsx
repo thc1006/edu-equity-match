@@ -1,5 +1,5 @@
 import { beforeEach, describe, expect, it } from 'vitest'
-import { render } from '@testing-library/react'
+import { render, screen } from '@testing-library/react'
 import { MemoryRouter } from 'react-router-dom'
 import { DataProvider } from '../context/DataContext'
 import { HomePage } from './HomePage'
@@ -21,5 +21,12 @@ describe('HomePage', () => {
     const { container } = renderHome()
     expect(container.querySelector('.hero-visual')).toHaveAttribute('aria-hidden', 'true')
     expect(container.querySelector('.avatar-stack')).toHaveAttribute('aria-hidden', 'true')
+  })
+
+  it('hides every decorative call-to-action arrow', () => {
+    renderHome()
+    const arrows = screen.getAllByText('→')
+    expect(arrows.length).toBeGreaterThan(0)
+    arrows.forEach((el) => expect(el).toHaveAttribute('aria-hidden', 'true'))
   })
 })

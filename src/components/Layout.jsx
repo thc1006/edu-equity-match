@@ -25,7 +25,7 @@ export function Layout() {
             {navItems.map((item) => (
               <NavLink key={item.to} to={item.to} onClick={() => setMenuOpen(false)}>{item.label}</NavLink>
             ))}
-            <Link className="nav-cta" to="/tasks" onClick={() => setMenuOpen(false)}>找到我的任務 <span>→</span></Link>
+            <Link className="nav-cta" to="/tasks" onClick={() => setMenuOpen(false)}>找到我的任務 <span aria-hidden="true">→</span></Link>
           </nav>
         </div>
       </header>

@@ -66,7 +66,7 @@ export function StudentFormPage() {
                 <Field label="是否願意公開專長卡片" required full><RadioCards name="isPublic" options={['願意公開', '暫不公開']} value={form.isPublic ? '願意公開' : '暫不公開'} onChange={(value) => set('isPublic', value === '願意公開')} /></Field>
               </div>
             </div>
-            <div className="submit-row"><p>送出即表示你理解：本 MVP 資料只保存在目前瀏覽器。</p><button className="button button-primary" type="submit">完成專長登錄 <span>→</span></button></div>
+            <div className="submit-row"><p>送出即表示你理解：本 MVP 資料只保存在目前瀏覽器。</p><button className="button button-primary" type="submit">完成專長登錄 <span aria-hidden="true">→</span></button></div>
           </form>
         </div>
       </section>

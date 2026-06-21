@@ -28,7 +28,7 @@ export function TaskFormPage() {
 
   return (
     <>
-      <PageHero eyebrow="發布教育任務" title="把需要說清楚，讓專長接得上" description="一個好任務有明確成果、合理時間與固定窗口。青年不只是幫手，而是一起完成影響力的合作夥伴。" aside={<div className="safe-aside"><strong>任務安全原則</strong><span>✓ 不讓未受訓青年獨自接觸兒少</span><span>✓ 不公開個資或未授權素材</span><span>✓ 提供清楚窗口與工作回饋</span></div>} />
+      <PageHero eyebrow="發布教育任務" title="把需要說清楚，讓專長接得上" description="一個好任務有明確成果、合理時間與固定窗口。青年不只是幫手，而是一起完成影響力的合作夥伴。" aside={<div className="safe-aside"><strong>任務安全原則</strong><span><span aria-hidden="true">✓</span> 不讓未受訓青年獨自接觸兒少</span><span><span aria-hidden="true">✓</span> 不公開個資或未授權素材</span><span><span aria-hidden="true">✓</span> 提供清楚窗口與工作回饋</span></div>} />
       <section className="section form-section">
         <div className="container form-layout">
           <aside className="form-sidebar"><div className="sidebar-sticky"><p className="eyebrow">好任務檢查</p><ul className="check-list"><li>有一個可交付成果</li><li>專長需求具體</li><li>時間範圍合理</li><li>聯絡窗口清楚</li></ul><div className="privacy-note"><strong>先求小而可完成</strong><p>MVP 階段建議把大型專案拆成 4－12 小時的明確任務。</p></div></div></aside>
@@ -58,7 +58,7 @@ export function TaskFormPage() {
                 <label className="switch-row field-full"><div><strong>提供志工服務時數</strong><small>請確認單位有能力核實並開立證明。</small></div><input type="checkbox" checked={form.volunteerHours} onChange={(e) => set('volunteerHours', e.target.checked)} /><span className="switch" /></label>
               </div>
             </div>
-            <div className="submit-row"><p>送出後仍可在簡易管理頁切換任務狀態。</p><button className="button button-primary" type="submit">發布這項任務 <span>→</span></button></div>
+            <div className="submit-row"><p>送出後仍可在簡易管理頁切換任務狀態。</p><button className="button button-primary" type="submit">發布這項任務 <span aria-hidden="true">→</span></button></div>
           </form>
         </div>
       </section>

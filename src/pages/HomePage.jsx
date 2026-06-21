@@ -65,7 +65,7 @@ export function HomePage() {
               </Link>
             ))}
           </div>
-          <div className="center-link"><Link to="/tasks">探索所有專長任務 <span>→</span></Link></div>
+          <div className="center-link"><Link to="/tasks">探索所有專長任務 <span aria-hidden="true">→</span></Link></div>
         </div>
       </section>
 
@@ -73,7 +73,7 @@ export function HomePage() {
         <div className="container">
           <div className="section-heading split-heading align-end">
             <div><p className="eyebrow">近期任務</p><h2>現在，就有地方需要你</h2></div>
-            <Link className="text-link" to="/tasks">查看全部任務 <span>→</span></Link>
+            <Link className="text-link" to="/tasks">查看全部任務 <span aria-hidden="true">→</span></Link>
           </div>
           <div className="task-grid">
             {recentTasks.map((task, index) => <TaskCard task={task} featured={index === 0} key={task.id} />)}
@@ -87,7 +87,7 @@ export function HomePage() {
             <p className="eyebrow">把關心走成一條路</p>
             <h2>三步，開始你的影響力</h2>
             <p>不用先成為專家。平台幫你找到合適、界線清楚的任務，合作單位則提供必要脈絡與回饋。</p>
-            <Link className="button button-primary" to="/students/new">登錄我的專長 <span>→</span></Link>
+            <Link className="button button-primary" to="/students/new">登錄我的專長 <span aria-hidden="true">→</span></Link>
           </div>
           <ol className="steps-list">
             <li><span>01</span><div><strong>告訴我們你會什麼</strong><p>登錄專長、可投入時間與你在意的合作方式。</p></div></li>
@@ -105,14 +105,14 @@ export function HomePage() {
             <h2>參與，不等於獨自承擔</h2>
             <p>青年任務聚焦在倡議、設計、資料、活動與組織支援；需要長期陪伴或直接接觸兒少的工作，應由具備制度與專業支持的組織帶領。</p>
           </div>
-          <div className="principle-points"><span>✓ 任務界線清楚</span><span>✓ 組織提供窗口</span><span>✓ 尊重隱私與授權</span></div>
+          <div className="principle-points"><span><span aria-hidden="true">✓</span> 任務界線清楚</span><span><span aria-hidden="true">✓</span> 組織提供窗口</span><span><span aria-hidden="true">✓</span> 尊重隱私與授權</span></div>
         </div>
       </section>
 
       <section className="cta-section">
         <div className="container cta-card">
           <div><p className="eyebrow light">你的能力，值得被需要</p><h2>準備好用專長，<br />讓教育多一種可能了嗎？</h2></div>
-          <div className="cta-actions"><Link className="button button-light" to="/students/new">登錄我的專長 <span>→</span></Link><Link to="/tasks">先看看有哪些任務</Link></div>
+          <div className="cta-actions"><Link className="button button-light" to="/students/new">登錄我的專長 <span aria-hidden="true">→</span></Link><Link to="/tasks">先看看有哪些任務</Link></div>
         </div>
       </section>
     </>
