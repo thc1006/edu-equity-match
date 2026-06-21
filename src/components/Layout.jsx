@@ -1,5 +1,5 @@
-import { useState } from 'react'
-import { Link, NavLink, Outlet } from 'react-router-dom'
+import { useEffect, useRef, useState } from 'react'
+import { Link, NavLink, Outlet, useLocation } from 'react-router-dom'
 
 const navItems = [
   { to: '/tasks', label: '探索任務' },
@@ -10,8 +10,19 @@ const navItems = [
 
 export function Layout() {
   const [menuOpen, setMenuOpen] = useState(false)
+  const { pathname } = useLocation()
+  const mainRef = useRef(null)
+  const skipInitialFocus = useRef(true)
+
+  useEffect(() => {
+    // 換頁後把焦點移到主內容，讓鍵盤與報讀使用者從新頁開頭開始；首次載入不搶焦點。
+    if (skipInitialFocus.current) { skipInitialFocus.current = false; return }
+    mainRef.current?.focus({ preventScroll: true })
+  }, [pathname])
+
   return (
     <div className="site-shell">
+      <a className="skip-link" href="#main-content">跳至主要內容</a>
       <header className="site-header">
         <div className="container nav-wrap">
           <Link className="brand" to="/" onClick={() => setMenuOpen(false)} aria-label="共學力首頁">
@@ -29,7 +40,7 @@ export function Layout() {
           </nav>
         </div>
       </header>
-      <main><Outlet /></main>
+      <main id="main-content" ref={mainRef} tabIndex={-1}><Outlet /></main>
       <footer className="site-footer">
         <div className="container footer-grid">
           <div>

@@ -37,6 +37,11 @@ h1, h2, h3 { line-height: 1.3; letter-spacing: -.035em; }
 .section { padding: 96px 0; }
 .site-shell { min-height: 100vh; overflow: hidden; }
 
+/* 鍵盤可達的跳轉連結：平時藏在視窗上方，獲得焦點時滑入。fixed 定位避開 site-shell 的 overflow:hidden。 */
+.skip-link { position: fixed; left: 12px; top: -56px; z-index: 100; background: var(--blue-dark); color: #fff; padding: 11px 18px; border-radius: 10px; font-weight: 700; box-shadow: 0 8px 20px rgba(12,52,125,.3); transition: top .2s; }
+.skip-link:focus { top: 12px; outline: 3px solid var(--yellow); outline-offset: 2px; }
+main:focus { outline: none; }
+
 .site-header { height: 78px; background: rgba(255,255,255,.94); border-bottom: 1px solid rgba(220,228,235,.8); position: relative; z-index: 50; backdrop-filter: blur(14px); }
 .nav-wrap { height: 100%; display: flex; align-items: center; justify-content: space-between; }
 .brand { display: inline-flex; align-items: center; gap: 11px; }
