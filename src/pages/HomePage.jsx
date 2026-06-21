@@ -15,19 +15,19 @@ export function HomePage() {
         <div className="hero-orb orb-one" /><div className="hero-orb orb-two" />
         <div className="container hero-grid">
           <div className="hero-copy">
-            <div className="hero-kicker"><span>✦</span> 你的專長，能讓教育多一種可能</div>
+            <div className="hero-kicker"><span aria-hidden="true">✦</span> 你的專長，能讓教育多一種可能</div>
             <h1>不一定要當老師，<br />也能參與<span>教育平權。</span></h1>
             <p>設計、剪輯、社群、資料、程式——每一種能力，都可能正是教育現場需要的那一塊。從一個適合你的任務開始，把關心變成真實行動。</p>
             <div className="hero-actions">
-              <Link className="button button-primary" to="/students/new">我是想幫忙的學生 <span>→</span></Link>
-              <Link className="button button-secondary" to="/tasks/new">我是需要協助的單位 <span>↗</span></Link>
+              <Link className="button button-primary" to="/students/new">我是想幫忙的學生 <span aria-hidden="true">→</span></Link>
+              <Link className="button button-secondary" to="/tasks/new">我是需要協助的單位 <span aria-hidden="true">↗</span></Link>
             </div>
             <div className="hero-proof">
-              <div className="avatar-stack"><span>禾</span><span>宇</span><span>庭</span><span>＋</span></div>
+              <div className="avatar-stack" aria-hidden="true"><span>禾</span><span>宇</span><span>庭</span><span>＋</span></div>
               <p><strong>不是教育系，也完全沒關係。</strong><br />從你已經會的事開始。</p>
             </div>
           </div>
-          <div className="hero-visual" aria-label="學生專長與教育任務媒合示意圖">
+          <div className="hero-visual" aria-hidden="true">
             <div className="visual-dots" />
             <div className="match-line line-one" /><div className="match-line line-two" />
             <div className="profile-card">
@@ -47,7 +47,7 @@ export function HomePage() {
             <div className="floating-label label-video">▶ 剪輯</div>
           </div>
         </div>
-        <div className="container hero-note"><span>↓</span><p><b>教育平權，是讓每個孩子不因出生地與家庭背景，被限制學習與發展的可能。</b> 這不是少數教育工作者的功課，而是每個專業都能一起解的問題。</p></div>
+        <div className="container hero-note"><span aria-hidden="true">↓</span><p><b>教育平權，是讓每個孩子不因出生地與家庭背景，被限制學習與發展的可能。</b> 這不是少數教育工作者的功課，而是每個專業都能一起解的問題。</p></div>
       </section>
 
       <section className="section skill-section">
@@ -59,9 +59,9 @@ export function HomePage() {
           <div className="skill-grid">
             {SKILLS.slice(0, 8).map((skill, index) => (
               <Link className={`skill-card skill-color-${(index % 4) + 1}`} to={`/tasks?skill=${encodeURIComponent(skill.name)}`} key={skill.name}>
-                <span className="skill-card-icon">{skill.icon}</span>
+                <span className="skill-card-icon" aria-hidden="true">{skill.icon}</span>
                 <div><strong>{skill.name}</strong><small>{skill.description}</small></div>
-                <span className="skill-arrow">↗</span>
+                <span className="skill-arrow" aria-hidden="true">↗</span>
               </Link>
             ))}
           </div>

@@ -31,17 +31,17 @@ export function TaskDetailPage() {
     <>
       <section className="detail-hero">
         <div className="container">
-          <Link className="back-link" to="/tasks">← 回到任務列表</Link>
+          <Link className="back-link" to="/tasks"><span aria-hidden="true">←</span> 回到任務列表</Link>
           <div className="detail-heading">
             <div>
-              <div className="detail-pills"><span className={`status-pill ${statusClass(task.status)}`}><i />{task.status}</span><span className="task-mode">{task.mode}</span></div>
+              <div className="detail-pills"><span className={`status-pill ${statusClass(task.status)}`}><i aria-hidden="true" />{task.status}</span><span className="task-mode">{task.mode}</span></div>
               <p className="eyebrow">{task.organization}</p>
               <h1>{task.title}</h1>
               <p className="lead">{task.summary}</p>
             </div>
             <div className="detail-action-card">
               <small>這項任務需要</small><div className="tag-row">{task.skills.map((skill) => <span className="skill-tag" key={skill}>{skill}</span>)}</div>
-              {task.status === '招募中' ? <button className="button button-primary button-full" type="button" onClick={() => { setShowForm(true); setTimeout(() => document.getElementById('apply')?.scrollIntoView({ behavior: 'smooth' }), 0) }}>我想參與 <span>→</span></button> : <button className="button button-disabled button-full" disabled>目前{task.status}</button>}
+              {task.status === '招募中' ? <button className="button button-primary button-full" type="button" onClick={() => { setShowForm(true); setTimeout(() => document.getElementById('apply')?.scrollIntoView({ behavior: 'smooth' }), 0) }}>我想參與 <span aria-hidden="true">→</span></button> : <button className="button button-disabled button-full" disabled>目前{task.status}</button>}
               <p>報名不代表立即媒合，單位會再與你確認合作方式。</p>
             </div>
           </div>
@@ -51,10 +51,10 @@ export function TaskDetailPage() {
         <div className="container detail-grid">
           <article className="detail-content">
             <section><p className="eyebrow">任務說明</p><h2>一起完成什麼？</h2><p>{task.details}</p></section>
-            <section><p className="eyebrow">任務資訊</p><h2>合作前先知道</h2><dl className="detail-list"><div><dt>◷ 預計時間</dt><dd>{task.time}</dd></div><div><dt>⌖ 參與形式</dt><dd>{task.mode}{task.location ? `・${task.location}` : ''}</dd></div><div><dt>◉ 服務時數</dt><dd>{task.volunteerHours ? '單位可核發志工服務時數' : '本任務不提供時數，以專案經驗與成果回饋為主'}</dd></div><div><dt>✉ 聯絡窗口</dt><dd>{task.contact}</dd></div></dl></section>
+            <section><p className="eyebrow">任務資訊</p><h2>合作前先知道</h2><dl className="detail-list"><div><dt><span aria-hidden="true">◷</span> 預計時間</dt><dd>{task.time}</dd></div><div><dt><span aria-hidden="true">⌖</span> 參與形式</dt><dd>{task.mode}{task.location ? `・${task.location}` : ''}</dd></div><div><dt><span aria-hidden="true">◉</span> 服務時數</dt><dd>{task.volunteerHours ? '單位可核發志工服務時數' : '本任務不提供時數，以專案經驗與成果回饋為主'}</dd></div><div><dt><span aria-hidden="true">✉</span> 聯絡窗口</dt><dd>{task.contact}</dd></div></dl></section>
             <section className="boundary-box"><span>守護專業的距離</span><div><h3>青年夥伴不會被要求獨自承擔教育現場工作</h3><p>任務應由發布單位提供素材、脈絡與窗口。若涉及兒少資料或影像，必須先完成授權、去識別化與必要的保護流程。</p></div></section>
           </article>
-          <aside className="organization-card"><div className="organization-mark">教</div><small>任務發布單位</small><h3>{task.organization}</h3><p>以實際行動回應教育現場需求，邀請青年用跨域能力一起參與。</p><span>✓ 已提供聯絡窗口</span><span>✓ 任務範圍已說明</span></aside>
+          <aside className="organization-card"><div className="organization-mark">教</div><small>任務發布單位</small><h3>{task.organization}</h3><p>以實際行動回應教育現場需求，邀請青年用跨域能力一起參與。</p><span><span aria-hidden="true">✓</span> 已提供聯絡窗口</span><span><span aria-hidden="true">✓</span> 任務範圍已說明</span></aside>
         </div>
       </section>
 
