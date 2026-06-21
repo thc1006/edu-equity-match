@@ -21,7 +21,7 @@ export function SkillPicker({ value, onChange, required = false }) {
         {SKILLS.map(({ name, icon }) => (
           <label key={name} className={value.includes(name) ? 'skill-option checked' : 'skill-option'}>
             <input type="checkbox" checked={value.includes(name)} onChange={() => toggle(name)} />
-            <span className="skill-icon">{icon}</span>{name}
+            <span className="skill-icon" aria-hidden="true">{icon}</span>{name}
           </label>
         ))}
       </div>
@@ -45,7 +45,7 @@ export function RadioCards({ name, options, value, onChange }) {
 export function SuccessPanel({ title, children, action }) {
   return (
     <section className="success-panel" role="status">
-      <div className="success-icon">✓</div>
+      <div className="success-icon" aria-hidden="true">✓</div>
       <p className="eyebrow">已完成</p>
       <h2>{title}</h2>
       <p>{children}</p>

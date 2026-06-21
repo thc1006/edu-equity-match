@@ -5,7 +5,7 @@ export function TaskCard({ task, featured = false }) {
   return (
     <article className={`task-card ${featured ? 'task-card-featured' : ''}`}>
       <div className="task-card-top">
-        <span className={`status-pill ${statusClass(task.status)}`}><i />{task.status}</span>
+        <span className={`status-pill ${statusClass(task.status)}`}><i aria-hidden="true" />{task.status}</span>
         <span className="task-mode">{task.mode}</span>
       </div>
       <div>
@@ -17,11 +17,11 @@ export function TaskCard({ task, featured = false }) {
         {task.skills.map((skill) => <span className="skill-tag" key={skill}>{skill}</span>)}
       </div>
       <div className="task-meta">
-        <span><b>◷</b>{task.time}</span>
-        <span><b>◉</b>{task.volunteerHours ? '可提供服務時數' : '專案經驗累積'}</span>
+        <span><b aria-hidden="true">◷</b>{task.time}</span>
+        <span><b aria-hidden="true">◉</b>{task.volunteerHours ? '可提供服務時數' : '專案經驗累積'}</span>
       </div>
       <Link className="card-link" to={`/tasks/${task.id}`} aria-label={`查看${task.title}詳情`}>
-        查看任務 <span>↗</span>
+        查看任務 <span aria-hidden="true">↗</span>
       </Link>
     </article>
   )
